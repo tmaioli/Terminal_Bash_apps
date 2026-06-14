@@ -2,13 +2,12 @@
 # Compiled and binary files
 *.pyc
 __pycache__/
-*.class
 *.o
+*.obj
 *.exe
 *.dll
 *.so
 *.a
-*.obj
 *.out
 
 # Dependencies
@@ -17,29 +16,28 @@ venv/
 .venv/
 .env
 .env.local
-*.env.*
+.env.*
 
 # Build artifacts
 dist/
 build/
 target/
 *.log
-coverage/
-htmlcov/
-.coverage
-.mypy_cache/
-.pytest_cache/
+*.tmp
+*.swp
 
-# Editors and IDEs
+# Editors
 .vscode/
 .idea/
-*.swp
-*.swo
-*.tmp
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
 # Compressed files
 *.zip
