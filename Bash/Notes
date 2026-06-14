@@ -1,0 +1,24 @@
+To create a new directory on GitHub, you can use one of these methods:
+
+
+Method 1: Create a Directory via New File (Easiest)
+Navigate to your repository on GitHub.
+Click the Add file button and select Create new file.
+In the filename input box, type the name of your new directory followed by a forward slash (e.g., MyNewFolder/).
+GitHub will automatically recognize this as a folder and create it.
+Since Git directories cannot be empty, you must also name a file inside it (e.g., MyNewFolder/.gitkeep or MyNewFolder/README.md).
+Scroll down and click Commit new file.
+
+Method 2: Upload a Folder
+Navigate to your repository on GitHub.
+Click Add file > Upload files.
+Drag and drop a folder from your computer into the upload area.
+Click Commit changes.
+
+Method 3: Using the Web Editor (for existing repos)
+If you are already editing a file or viewing the repo:
+Click the . key on your keyboard to open the web-based code editor.
+Right-click in the file explorer sidebar and select New Folder.
+Name the folder and ensure you add at least one file inside it before committing.
+Note: Git does not track empty directories. You must always have at least one file (commonly a .gitkeep file) inside the directory for it to be saved in the repository.
+
