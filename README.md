@@ -1,9 +1,13 @@
+# Automation and Script Capabilities
+
+The primary operational objective of this codebase is to automate repetitive system tasks, gather precise environment diagnostics, and optimize local machine deployment. Within the Linux ecosystem, the scripts focus on environment customization, routine maintenance, and terminal optimization, allowing for rapid machine setup with minimal manual intervention. On the system information front, the repository leverages specialized administrative scripts—such as the included PowerShell modules—to query underlying hardware architectures, audit operating system configurations, and log vital system metrics. This multi-shell approach provides a comprehensive administrative framework, enabling rapid execution of diagnostic checks and system configurations from a single, lightweight repository.
+
 # System Information & Utilities Repository
 
 A collection of PowerShell and Bash scripts for system diagnostics, information gathering, and utilities.
 
 ## 📅 Repository Info
-- **Last Updated**: June 14, 2026
+- **Last Updated**: July 7, 2026
 - **Primary Focus**: System information gathering and diagnostics
 - **Tested On**: Windows 11, Ubuntu
 
