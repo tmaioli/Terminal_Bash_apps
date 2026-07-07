@@ -1,32 +1,39 @@
-# Automation and Script Capabilities
+Reviewing the current layout of the [Terminal_Bash_apps](https://github.com/tmaioli/Terminal_Bash_apps) repository documentation reveals a structurally accurate mapping of the existing files, including the core PowerShell automation script, the sample system diagnostics log, and the dedicated Linux environment subdirectory. However, an editorial audit of the current file highlights a significant structural redundancy and a minor layout hierarchy inversion that should be corrected to meet professional documentation standards. Specifically, the introductory paragraph detailing the overall automation and script capabilities is duplicated word-for-word further down the page under the Bash scripts section. This repetition disrupts the logical narrative flow and creates an unnecessary echo when processed sequentially by text-to-speech software or screen readers.
 
-The primary operational objective of this codebase is to automate repetitive system tasks, gather precise environment diagnostics, and optimize local machine deployment. Within the Linux ecosystem, the scripts focus on environment customization, routine maintenance, and terminal optimization, allowing for rapid machine setup with minimal manual intervention. On the system information front, the repository leverages specialized administrative scripts—such as the included PowerShell modules—to query underlying hardware architectures, audit operating system configurations, and log vital system metrics. This multi-shell approach provides a comprehensive administrative framework, enabling rapid execution of diagnostic checks and system configurations from a single, lightweight repository.
+To optimize the document for seamless reading and maintainability, the page should be restructured so that the primary repository title and descriptive subtitle sit at the absolute top of the file, establishing an immediate context before diving into deep technical capabilities. Additionally, the duplicate text block under the Bash header should be removed and replaced with a concise, contextual description that accurately points the user toward the internal subfiles.
 
+The following clean, refactored Markdown represents the corrected and streamlined version of the file, ready to be applied directly to the repository update:
+
+```markdown
 # System Information & Utilities Repository
 
-A collection of PowerShell and Bash scripts for system diagnostics, information gathering, and utilities.
+A collection of PowerShell and Bash scripts for system diagnostics, information gathering, and utilities designed for automated deployment and environment profiling.
 
 ## 📅 Repository Info
-- **Last Updated**: July 7, 2026
-- **Primary Focus**: System information gathering and diagnostics
-- **Tested On**: Windows 11, Ubuntu
 
----
+* Last Updated: July 7, 2026
+* Primary Focus: System information gathering and diagnostics
+* Tested On: Windows 11, Ubuntu
 
 ## 📁 Repository Structure
 
+
 ```
+
 /workspace/
 ├── Qwen_powershell_20260614.PS1    # PowerShell system info script
 ├── PS_System_Information           # Sample output from PowerShell script
-├── readme.md                       # This file
+├── README.md                       # This file
 ├── .gitignore                      # Git ignore rules
 └── Bash/
-    ├── README                      # Bash scripts documentation
-    └── Notes                       # GitHub directory creation guide
+├── README                      # Bash scripts documentation
+└── Notes                       # GitHub directory creation guide
+
 ```
 
----
+## ⚙️ Automation and Script Capabilities
+
+The primary operational objective of this codebase is to automate repetitive system tasks, gather precise environment diagnostics, and optimize local machine deployment. Within the Linux ecosystem, the scripts focus on environment customization, routine maintenance, and terminal optimization, allowing for rapid machine setup with minimal manual intervention. On the system information front, the repository leverages specialized administrative scripts—such as the included PowerShell modules—to query underlying hardware architectures, audit operating system configurations, and log vital system metrics. This multi-shell approach provides a comprehensive administrative framework, enabling rapid execution of diagnostic checks and system configurations from a single, lightweight repository.
 
 ## 🔧 PowerShell Scripts
 
@@ -35,31 +42,31 @@ A collection of PowerShell and Bash scripts for system diagnostics, information 
 A comprehensive system information gathering script that collects hardware and OS details using WMI/CIM queries.
 
 #### Features
-- Computer name and manufacturer
-- Hardware model
-- Operating system version
-- CPU model and core count
-- Total and free RAM (in GB)
-- Free disk space on C: drive (in GB)
-- System uptime
+* Computer name and manufacturer
+* Hardware model
+* Operating system version
+* CPU model and core count
+* Total and free RAM (in GB)
+* Free disk space on C: drive (in GB)
+* System uptime
 
 #### Requirements
-- PowerShell with CIM/WMI access
-- Windows OS (tested on Windows 11)
+* PowerShell with CIM/WMI access
+* Windows OS (tested on Windows 11)
 
 #### Usage
-
 ```powershell
 # Run the script
 .\Qwen_powershell_20260614.PS1
 
 # Optional: Export to CSV (uncomment line 64 in script)
 # $report | Export-Csv -Path "SystemInfo.csv" -NoTypeInformation
+
 ```
 
 #### Sample Output
 
-```
+```text
 ComputerName : HP-LAPTOP-2021
 Manufacturer : HP
 Model        : HP Laptop 17
@@ -70,60 +77,37 @@ RAM_Total_GB : 31.33
 RAM_Free_GB  : 18.41
 Disk_C_Free  : 487.13
 Uptime       : 08:12:53.0575772
-```
-
-#### ⚠️ Common Error: Execution Policy
-
-If you encounter the following error:
 
 ```
-You cannot run this script on the current system. For more information about running scripts 
-and setting execution policy, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
+
+## ⚠️ Common Error: Execution Policy
+
+If you encounter an execution policy error preventing the script from running on your current system, run PowerShell as an Administrator and execute one of the following commands to update your execution boundaries.
+
+For the current user only (recommended):
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 ```
 
-**Solution:** Run PowerShell as Administrator and execute one of the following commands:
+For all users (requires Administrator privileges):
 
-- **For current user only (recommended):**
-  ```powershell
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
-- **For all users (requires Admin):**
-  ```powershell
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-  ```
-
----
+```
 
 ## 🐚 Bash Scripts
 
-Automation and Script Capabilities
-The primary operational objective of this codebase is to automate repetitive system tasks, gather precise environment diagnostics, and optimize local machine deployment. Within the Linux ecosystem, the scripts focus on environment customization, routine maintenance, and terminal optimization, allowing for rapid machine setup with minimal manual intervention. On the system information front, the repository leverages specialized administrative scripts—such as the included PowerShell modules—to query underlying hardware architectures, audit operating system configurations, and log vital system metrics. This multi-shell approach provides a comprehensive administrative framework, enabling rapid execution of diagnostic checks and system configurations from a single, lightweight repository.
-
----
+The Bash subdirectory contains dedicated environment configuration assets and automation routines tailored specifically for Linux environments. This includes explicit system execution notes and localized deployment logic designed to streamline terminal-based workflows. For detailed setup instructions and shell script execution parameters, please refer directly to the documentation contained within the internal Bash folder files.
 
 ## 📝 Notes
 
-- This repository is used for testing and evaluating AI-generated PowerShell scripts for system diagnostics
-- Git does not track empty directories - ensure folders contain at least one file (e.g., `.gitkeep` or `README`)
-- See `Bash/Notes` for guidance on creating directories in GitHub repositories
+* This repository is utilized for testing, validating, and archiving automated, AI-assisted scripts focused on system diagnostics.
+* Because Git does not track empty directories natively, ensure all newly created structural folders contain at least one anchor file, such as a localized README or a configuration asset.
+* Refer to the internal documentation path for step-by-step guidance on establishing clean directory creation hierarchies directly within a remote interface.
 
----
+```
 
-## 🤖 AI Integration
-
-This repository demonstrates AI-assisted script generation, including:
-- PowerShell scripts generated by Qwen3-Coder
-- System diagnostics automation
-- Cross-platform utility scripts
-
----
-
-## 📄 License
-
-This repository is for personal/testing use.
-
----
-
-**Generated**: June 14, 2026  
-**Platform**: Microsoft's Intelligent Terminal
+```
