@@ -93,9 +93,8 @@ and setting execution policy, see about_Execution_Policies at https://go.microso
 
 ## 🐚 Bash Scripts
 
-Located in the `Bash/` directory. These scripts are primarily tested on Ubuntu systems.
-
-See `Bash/README` for more details.
+Automation and Script Capabilities
+The primary operational objective of this codebase is to automate repetitive system tasks, gather precise environment diagnostics, and optimize local machine deployment. Within the Linux ecosystem, the scripts focus on environment customization, routine maintenance, and terminal optimization, allowing for rapid machine setup with minimal manual intervention. On the system information front, the repository leverages specialized administrative scripts—such as the included PowerShell modules—to query underlying hardware architectures, audit operating system configurations, and log vital system metrics. This multi-shell approach provides a comprehensive administrative framework, enabling rapid execution of diagnostic checks and system configurations from a single, lightweight repository.
 
 ---
 
