@@ -1,7 +1,3 @@
-Reviewing the current layout of the [Terminal_Bash_apps](https://github.com/tmaioli/Terminal_Bash_apps) repository documentation reveals a structurally accurate mapping of the existing files, including the core PowerShell automation script, the sample system diagnostics log, and the dedicated Linux environment subdirectory. However, an editorial audit of the current file highlights a significant structural redundancy and a minor layout hierarchy inversion that should be corrected to meet professional documentation standards. Specifically, the introductory paragraph detailing the overall automation and script capabilities is duplicated word-for-word further down the page under the Bash scripts section. This repetition disrupts the logical narrative flow and creates an unnecessary echo when processed sequentially by text-to-speech software or screen readers.
-
-To optimize the document for seamless reading and maintainability, the page should be restructured so that the primary repository title and descriptive subtitle sit at the absolute top of the file, establishing an immediate context before diving into deep technical capabilities. Additionally, the duplicate text block under the Bash header should be removed and replaced with a concise, contextual description that accurately points the user toward the internal subfiles.
-
 The following clean, refactored Markdown represents the corrected and streamlined version of the file, ready to be applied directly to the repository update:
 
 ```markdown
@@ -18,7 +14,7 @@ A collection of PowerShell and Bash scripts for system diagnostics, information 
 ## 📁 Repository Structure
 
 
-```
+```text
 
 /workspace/
 ├── Qwen_powershell_20260614.PS1    # PowerShell system info script
@@ -55,6 +51,7 @@ A comprehensive system information gathering script that collects hardware and O
 * Windows OS (tested on Windows 11)
 
 #### Usage
+
 ```powershell
 # Run the script
 .\Qwen_powershell_20260614.PS1
