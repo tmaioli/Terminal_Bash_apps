@@ -33,6 +33,10 @@
     Win32_Processor, Win32_ComputerSystem, and Win32_LogicalDisk.
 #>
 
+param(
+    [switch]$ExportCsv
+)
+
 # Query essential system information using CIM (equivalent to WMI)
 $os = Get-CimInstance Win32_OperatingSystem
 $cpu = Get-CimInstance Win32_Processor
@@ -60,5 +64,8 @@ $report = [PSCustomObject]@{
 # Display the collected information as a clean, formatted list
 $report | Format-List
 
-# Optional: Uncomment the following line to export the information to a CSV file named 'SystemInfo.csv'
-# $report | Export-Csv -Path "SystemInfo.csv" -NoTypeInformation
+# Export to CSV if the switch parameter is provided
+if ($ExportCsv) {
+    $report | Export-Csv -Path "SystemInfo.csv" -NoTypeInformation
+    Write-Host "System information exported to SystemInfo.csv"
+}
