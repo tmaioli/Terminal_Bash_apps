@@ -1,6 +1,3 @@
-The following clean, refactored Markdown represents the corrected and streamlined version of the file, ready to be applied directly to the repository update:
-
-```markdown
 # System Information & Utilities Repository
 
 A collection of PowerShell and Bash scripts for system diagnostics, information gathering, and utilities designed for automated deployment and environment profiling.
@@ -13,18 +10,15 @@ A collection of PowerShell and Bash scripts for system diagnostics, information 
 
 ## 📁 Repository Structure
 
-
 ```text
-
 /workspace/
 ├── Qwen_powershell_20260614.PS1    # PowerShell system info script
 ├── PS_System_Information           # Sample output from PowerShell script
 ├── README.md                       # This file
 ├── .gitignore                      # Git ignore rules
 └── Bash/
-├── README                      # Bash scripts documentation
-└── Notes                       # GitHub directory creation guide
-
+    ├── README.md                   # Bash scripts documentation
+    └── Notes.md                    # GitHub directory creation guide
 ```
 
 ## ⚙️ Automation and Script Capabilities
@@ -45,6 +39,7 @@ A comprehensive system information gathering script that collects hardware and O
 * Total and free RAM (in GB)
 * Free disk space on C: drive (in GB)
 * System uptime
+* Optional CSV export with `-ExportCsv` parameter
 
 #### Requirements
 * PowerShell with CIM/WMI access
@@ -56,8 +51,8 @@ A comprehensive system information gathering script that collects hardware and O
 # Run the script
 .\Qwen_powershell_20260614.PS1
 
-# Optional: Export to CSV (uncomment line 64 in script)
-# $report | Export-Csv -Path "SystemInfo.csv" -NoTypeInformation
+# Export to CSV
+.\Qwen_powershell_20260614.PS1 -ExportCsv
 
 ```
 
@@ -104,7 +99,3 @@ The Bash subdirectory contains dedicated environment configuration assets and au
 * This repository is utilized for testing, validating, and archiving automated, AI-assisted scripts focused on system diagnostics.
 * Because Git does not track empty directories natively, ensure all newly created structural folders contain at least one anchor file, such as a localized README or a configuration asset.
 * Refer to the internal documentation path for step-by-step guidance on establishing clean directory creation hierarchies directly within a remote interface.
-
-```
-
-```
